@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int rowsize, columsize; // arry size
-int arry[50][50];
+int arry[50][50]={0,};
 
 void DFS(int row, int colume);
 
