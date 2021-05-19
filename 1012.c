@@ -11,9 +11,10 @@ int main () {
 	int testcase;
 	int cabbage; // number of cabbage
 	int row, colum; // set cabbage point
-	int count=0; // bug's num
+	int count; // bug's num
 	scanf ("%d", &testcase);
 	for (int i=0;i<testcase;i++){ // set cabbage
+		count = 0;
 		scanf ("%d %d %d", &columsize, &rowsize, &cabbage);
 		for (int j=0;j<cabbage;j++){
 			scanf("%d %d", &colum, &row);
