@@ -2,29 +2,44 @@
 
 int rowsize, columsize; // arry size
 int arry[50][50]={0,};
+int moveX[4]={1,0,-1,0};
+int moveY[4]={0,1,0,-1};
 
-void DFS(int row, int colume);
+void DFS(int row, int colum);
 
 int main () {
 	int testcase;
 	int cabbage; // number of cabbage
 	int row, colum; // set cabbage point
-	int count; // bug's num
+	int count=0; // bug's num
 	scanf ("%d", &testcase);
-	scanf ("%d %d %d", &columsize, &rowsize, &cabbabge);
 	for (int i=0;i<testcase;i++){ // set cabbage
-		scanf("%d %d", &colum, &row);
-		arry[row][colum]=1;
-	}
-	for (int i=0;i<row;i++) {
-		for (int j=0;j<colum;j++){
-			if(arry[row][colum]==1){
-				DFS(row, colum);
+		scanf ("%d %d %d", &columsize, &rowsize, &cabbage);
+		for (int j=0;j<cabbage;j++){
+			scanf("%d %d", &colum, &row);
+			arry[row][colum]=1;
 		}
+	
+		for (int i=0;i<rowsize;i++) {
+			for (int j=0;j<columsize;j++){
+				if(arry[i][j]==1){
+					DFS(i, j);
+					count++;
+				}
+			}
+		}
+		printf("%d\n", count);
 	}
 	return 0;
 }
 
-void DFS (int row, int colume){
-	
+void DFS (int row, int colum){
+	if (arry[row][colum]==1){
+		arry[row][colum]=0;
+		for (int i=0;i<4;i++){
+			int y=moveX[i]+colum;
+			int x=moveY[i]+row;
+			if (x>=0&&y>=0&&y<columsize&&x<rowsize) DFS(x, y);
+		}
+	}
 }
