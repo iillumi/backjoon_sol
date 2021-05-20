@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 
-int sol(int, int, int, int);
+double sol(int, int, int, int);
 
 int main () {
 	int testcase, dot;
@@ -9,8 +9,6 @@ int main () {
 	double result;
 	scanf ("%d", &testcase);
 	for (int i=0;i<testcase;i++){
-		x=0;
-		y=0;
 		scanf ("%d ", &dot);
 		for (int j=0;j<dot;j++){
 			scanf("%d %d", &arry[j][0], &arry[j][1]);
@@ -21,7 +19,21 @@ int main () {
 	return 0;
 }
 
-int sol (int arry[][0], int dot, int count, int index){
-	int reuslt;
+double sol (int arry[][0], int dot, int count, int index){
+	double reuslt;
+	double x=0;
+	double y=0;
+	int data[20]={0,}
+	//20C10 구하는 코드 구현
+	for (int i=0;i<dot;i++){
+		if(data[i]==1){
+			x+=arry[i][0];
+			y+=arry[i][1];
+		}
+		else {
+			x-=arry[i][0];
+			y-=arry[i][1];
+		}
+	}
 	return result;
 }
