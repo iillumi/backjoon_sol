@@ -20,7 +20,7 @@ int main () {
 }
 
 double sol (int arry[][0], int dot, int count, int index){
-	double reuslt;
+	double reuslt=999999999;
 	double x=0;
 	double y=0;
 	int data[20]={0,}
@@ -35,5 +35,9 @@ double sol (int arry[][0], int dot, int count, int index){
 			y-=arry[i][1];
 		}
 	}
+	result = min(result, sqrt(x*x+y*y));
+
+
+
 	return result;
 }
