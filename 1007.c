@@ -3,7 +3,7 @@
 
 int arry[20][2]={0,};
 int testcase, dot;
-double result=99999999999;
+double result;
 int data[20]={0,};
 
 void sol(int, int);
@@ -11,6 +11,7 @@ void sol(int, int);
 int main () {
 	scanf ("%d", &testcase);
 	for (int i=0;i<testcase;i++){
+		result=9223372036854775806;
 		scanf ("%d", &dot);
 		for (int j=0;j<dot;j++){
 			scanf("%d %d", &arry[j][0], &arry[j][1]);
