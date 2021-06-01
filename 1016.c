@@ -3,7 +3,7 @@
 int main () {
 	long long int min, max;
 	int count=0;
-	int arry[1000000]={0,};
+	int arry[1000001]={0,};
 	long long int num;
 	scanf("%lld %lld", &min, &max);
 	for (long long int i=2;i*i<=max;i++) {
