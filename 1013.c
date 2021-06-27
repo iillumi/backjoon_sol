@@ -7,7 +7,6 @@ int main () {
 	int t;
 	char arry[200];
 	scanf("%d", &t);
-	memset(arry, '9',200);
 	for(int i=0;i<t;i++) {
 		scanf("%s", arry);
 		sol(arry, 0, 'S');
